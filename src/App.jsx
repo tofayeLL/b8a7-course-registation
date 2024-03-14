@@ -14,7 +14,7 @@ function App() {
       </div>
 
       <div className='grid  grid-cols-4 gap-4 container mx-auto px-10'>
-        <div className='col-span-3  bg-red-200'>
+        <div className='col-span-3'>
           <Cards></Cards>
         </div>
         <div className='col-span-1 bg-green-200'>
