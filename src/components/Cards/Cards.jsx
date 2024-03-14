@@ -3,13 +3,13 @@ import { useState } from "react";
 import Card from "../Card/Card";
 
 
-const Cards = () => {
+const Cards = ({ handleSelected }) => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
         fetch('courses.json')
-        .then(res => res.json())
-        .then(data => setCards(data));
+            .then(res => res.json())
+            .then(data => setCards(data));
 
     }, [])
 
@@ -17,9 +17,13 @@ const Cards = () => {
 
     return (
         <div className="grid grid-cols-3 gap-5">
-            
+
             {
-                cards.map((card, index) => <Card key={index} card={card}></Card>)
+                cards.map((card, index) => <Card
+                    key={index}
+                    card={card}
+                    handleSelected={handleSelected}
+                ></Card>)
             }
 
             {/* card 1 */}
