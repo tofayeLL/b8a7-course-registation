@@ -1,8 +1,9 @@
 
 import { IoBookOutline } from "react-icons/io5";
 import { BsCurrencyDollar } from "react-icons/bs";
+import PropTypes from 'prop-types'
 const Card = ({ card, handleSelected }) => {
-    const { id, name, description, photo, price, credit } = card;
+    const { name, description, photo, price, credit } = card;
     return (
         <div className="space-y-3 p-4 shadow-xl rounded-lg">
 
@@ -33,5 +34,11 @@ const Card = ({ card, handleSelected }) => {
         </div>
     );
 };
+
+Card.propTypes = {
+    card: PropTypes.object,
+    handleSelected: PropTypes.func
+
+}
 
 export default Card;

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Card from "../Card/Card";
+import PropTypes from 'prop-types'
 
 
 const Cards = ({ handleSelected }) => {
@@ -12,7 +13,6 @@ const Cards = ({ handleSelected }) => {
             .then(data => setCards(data));
 
     }, [])
-
 
 
     return (
@@ -55,10 +55,13 @@ const Cards = ({ handleSelected }) => {
 
             </div> */}
 
-
-
         </div>
     );
 };
+
+Cards.propTypes = {
+    handleSelected: PropTypes.func
+
+}
 
 export default Cards;

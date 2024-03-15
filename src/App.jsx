@@ -16,22 +16,23 @@ function App() {
 
 
   const handleSelected = (card, credit) => {
-    /*  const credit = courseInfos.reduce((p, c) => p + c.credit, 0);
- 
-     if (credit + courseInfos.credit > totalCredit) {
-       return alert(`only ${totalCredit} allowed`);
- 
-     } */
+
+    // for another logic validation for course credit
+   /*  if(credits + card.credit > 15){
+      return alert(`you can not get more than 15 credit`);
+
+    }
+ */
 
 
-
+    // Course credit can not select more than 15 validation
     const newCredit = credits + credit;
     setCredits(newCredit);
-    if (credits + card.credit > 15) {
+    if (newCredit > 15) {
       return alert(`you can not get more than 15 credit`);
     }
 
-
+    // card can not selected more than once validation
     const alreadyExist = courseInfos.find(info => info.id === card.id);
     if (!alreadyExist) {
       const newCourseInfo = [...courseInfos, card];
@@ -44,6 +45,8 @@ function App() {
 
   }
 
+
+  // delete item event handle
   const handleDelete = (id) => {
     const remaining = courseInfos.filter(course => course.id !== id);
     setCourseInfos(remaining);
@@ -51,9 +54,6 @@ function App() {
 
   }
  
-
-
-
 
 
   return (

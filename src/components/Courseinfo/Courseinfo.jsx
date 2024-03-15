@@ -1,15 +1,10 @@
 
-
+import PropTypes from 'prop-types'
 
 const Courseinfo = ({ courseInfos, handleDelete }) => {
 
-
-
-
     const credit = courseInfos.reduce((p, c) => p + c.credit, 0);
     const remaining = (15 - credit);
-
-
 
     return (
         <div className="space-y-3 my-4 p-4">
@@ -44,5 +39,14 @@ const Courseinfo = ({ courseInfos, handleDelete }) => {
         </div>
     );
 };
+
+
+Courseinfo.propTypes = {
+
+    courseInfos: PropTypes.array,
+    handleDelete: PropTypes.func
+
+
+}
 
 export default Courseinfo;
